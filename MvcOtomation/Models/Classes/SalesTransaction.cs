@@ -1,7 +1,10 @@
-﻿namespace MvcOtomation.Models.Classes
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace MvcOtomation.Models.Classes
 {
     public class SalesTransaction
     {
+        [Key]
         public int Id { get; set; }
         public int Piece { get; set; }
         public decimal UnitPrice { get; set; }
