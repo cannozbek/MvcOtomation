@@ -25,7 +25,8 @@ namespace MvcOtomation.Models.Classes
         [StringLength(250)]
         public string Photo { get; set; }
 
-        public Category Category { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category Category { get; set; }
         public ICollection<SalesTransaction> SalesTransactions { get; set; }
 
 

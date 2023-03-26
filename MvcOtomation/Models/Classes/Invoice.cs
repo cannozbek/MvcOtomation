@@ -34,6 +34,6 @@ namespace MvcOtomation.Models.Classes
         [StringLength(30)]
         public string Receiver { get; set; }
         
-        public ICollection<InvoiceDetail> InvoiceDetails { get; set; }
+        public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

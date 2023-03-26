@@ -35,13 +35,13 @@
                         <tr>
                             <td>@item.Id</td>
                             <td>@item.Name</td>
-                            <td style="text-align: center" ><a href="#" style="color: aliceblue" class=" btn btn-danger" >Delete</a></td>
-                            <td style="text-align: center"  ><a href="#" style="color: aliceblue" class="btn btn-success">Update</a></td>
+                            <td style="text-align: center" ><a href="/Category/DeleteCategory/@item.Id" style="color: aliceblue" class=" btn btn-danger" >Delete</a></td>
+                            <td style="text-align: center"  ><a href="/Category/FetchCategory/@item.Id" style="color: aliceblue" class="btn btn-success">Update</a></td>
                         </tr>
                         }
                     </tbody>
                 </table>
-                <button class="btn btn-primary" style="margin-top: 20px">Add New Category</button>
+                <a href="/Category/AddCategory">Add Category</a>
             </div>
         </div>
     </div>

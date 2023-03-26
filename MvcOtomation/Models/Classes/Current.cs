@@ -25,6 +25,6 @@ namespace MvcOtomation.Models.Classes
         [StringLength(50)]
         public string Mail { get; set; }
 
-        public ICollection<SalesTransaction> SalesTransactions { get; set; }
+        public virtual ICollection<SalesTransaction> SalesTransactions { get; set; }
     }
 }

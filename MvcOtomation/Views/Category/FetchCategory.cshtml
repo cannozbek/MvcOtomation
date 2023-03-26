@@ -1,0 +1,20 @@
+﻿@model MvcOtomation.Models.Classes.Category
+@{
+    ViewBag.Title = "FetchCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="margin-left: 20px">Update Category</h2>
+<br />
+
+@using (Html.BeginForm("UpdateCategory", "Category", FormMethod.Post))
+{
+<div class="form-group" style="margin-left: 20px">
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @style = "margin-top: 20px; margin-right: 20px" })
+    @Html.HiddenFor(x => x.Id)
+    <button class="btn btn-warning" style="margin-top: 20px">Update</button>
+
+</div>
+    
+}

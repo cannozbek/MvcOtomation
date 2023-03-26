@@ -1,0 +1,57 @@
+﻿@using MvcOtomation.Models.Classes
+@model List<Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Products DataTable</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Brand</th>
+                        <th>Stock</th>
+                        <th>Purchase Price</th>
+                        <th>Sale Price</th>
+                        <th>Photo</th>
+                        <th>Category</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+
+
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        //if (item.State == true)
+                        //{
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Brand</td>
+                            <td>@item.Stock</td>
+                            <td>@item.PurchasePrice</td>
+                            <td>@item.SalePice</td>
+                            <td>@item.Photo</td>
+                            <td>@item.Category.Name</td>
+                            <td style="text-align: center"><a href="/Product/DeleteProduct/@item.Id" style="color: aliceblue" class=" btn btn-danger">Delete</a></td>
+                            <td style="text-align: center"><a href="/Product/FetchProduct/@item.Id" style="color: aliceblue" class="btn btn-success">Update</a></td>
+                        </tr>
+                        @*}*@
+
+                    }
+                </tbody>
+            </table>
+            <a href="/Product/AddProduct">Add Product</a>
+        </div>
+    </div>
+</div>
+

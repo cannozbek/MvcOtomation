@@ -10,8 +10,8 @@ namespace MvcOtomation.Models.Classes
         public decimal UnitPrice { get; set; }
         public decimal Amount { get; set; }
 
-        public Current Current { get; set; }
-        public Employee Employee { get; set; }
-        public Product Product { get; set; }
+        public virtual Current Current { get; set; }
+        public virtual Employee Employee { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

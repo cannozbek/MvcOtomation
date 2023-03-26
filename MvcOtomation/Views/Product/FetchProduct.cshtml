@@ -1,0 +1,66 @@
+﻿@model MvcOtomation.Models.Classes.Product
+@{
+    ViewBag.Title = "FetchProduct";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="margin-left: 20px">FetchProduct</h2>
+<br />
+@using (Html.BeginForm("UpdateProduct", "Product", FormMethod.Post))
+
+{
+<div style="margin-left: 20px">
+
+    @Html.HiddenFor(x => x.Id)
+
+    @*//Product Name*@
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    @*//Product Brand*@
+    @Html.LabelFor(x => x.Brand)
+    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+    <br />
+
+    @*//Product Stock*@
+    @Html.LabelFor(x => x.Stock)
+    @Html.TextBoxFor(x => x.Stock, new { @class = "form-control" })
+    <br />
+
+    @*//Product PurchasePrice*@
+    @Html.Label("Purchase Price")
+    @Html.TextBoxFor(x => x.PurchasePrice, new { @class = "form-control" })
+    <br />
+
+    @*//Product SalePice*@
+    @Html.Label("Sale Price")
+    @Html.TextBoxFor(x => x.SalePice, new { @class = "form-control" })
+    <br />
+
+    @*//Product State*@
+    @Html.LabelFor(x => x.State)
+    @Html.DropDownListFor(x => x.State,
+        (List<SelectListItem>)ViewBag.ListStateBag,
+        new { @class = "form-control" })
+    <br />
+
+    @*//Product Photo*@
+    @Html.LabelFor(x => x.Photo)
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+    <br />
+
+    @*//Product Category*@
+    @Html.Label("Category Name")
+    @*@Html.TextBoxFor(x => x.CategoryId, new { @class = "form-control" })*@
+    @Html.DropDownListFor(x => x.CategoryId,
+    (List<SelectListItem>)ViewBag.ListCategoryBag,
+    new { @class = "form-control" })
+
+    <button class="btn btn-warning" style="margin-top: 20px">Update</button>
+
+</div>
+   
+
+}
