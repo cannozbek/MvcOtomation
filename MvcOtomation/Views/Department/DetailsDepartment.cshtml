@@ -1,0 +1,50 @@
+﻿@using MvcOtomation.Models.Classes
+@model List<Employee>
+@{
+    ViewBag.Title = "DetailsDepartment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="margin-left:20px;">@ViewBag.departmentNameBag Department Details</h2>
+<br />
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Department Details</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>Photo</th>
+                        <th>Sales</th>
+
+
+
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        //if (item.State == true)
+                        //{
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Name</td>
+                            <td>@item.Surname</td>
+                            <td>@item.Photo</td>
+                            <td style="text-align: center"><a href="/Department/DeparmentEmployeeSales/@item.Id" style="color: aliceblue" class="btn btn-info">Sales</a></td>
+
+                        </tr>
+                        @*}*@
+
+                    }
+                </tbody>
+            </table>
+            <a href="/Department/AddDeparment">Add Department</a>
+        </div>
+    </div>
+</div>
+

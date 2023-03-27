@@ -1,0 +1,52 @@
+﻿@using MvcOtomation.Models.Classes
+@model List<SalesTransaction>
+@{
+    ViewBag.Title = "DeparmentEmployeeSales";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="margin-left: 20px">@ViewBag.employeeNameBag's Sales</h2>
+<br />
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Sales</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Product</th>
+                        <th>Current</th>
+                        <th>Price</th>
+                        <th>Piece</th>
+                        <th>Amount</th>
+                        <th>Tarih</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        //if (item.State == true)
+                        //{
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Current.Name  @item.Current.Surname</td>
+                        <td>@item.UnitPrice</td>
+                        <td>@item.Piece</td>
+                        <td>@item.Amount</td>
+                        <td>@item.Time</td>
+                        @*<td style="text-align: center"><a href="/Department/DeparmentEmployeeSales/@item.Id" style="color: aliceblue" class="btn btn-info">Sales</a></td>*@
+
+                    </tr>
+                        @*}*@
+
+                    }
+                </tbody>
+            </table>
+            <a href="/Department/AddDeparment">Add Department</a>
+        </div>
+    </div>
+</div>
+

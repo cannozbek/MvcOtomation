@@ -1,0 +1,49 @@
+﻿@using MvcOtomation.Models.Classes
+@model List<Department>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Department DataTable</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Delete</th>
+                        <th>Update</th>
+                        <th>Detail</th>
+
+
+
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        //if (item.State == true)
+                        //{
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.Name</td>
+
+                        <td style="text-align: center"><a href="/Department/DeleteDepartment/@item.Id" style="color: aliceblue" class=" btn btn-danger">Delete</a></td>
+                        <td style="text-align: center"><a href="/Department/FetchDepartment/@item.Id" style="color: aliceblue" class="btn btn-success">Update</a></td>
+                        <td style="text-align: center"><a href="/Department/DetailsDepartment/@item.Id" style="color: aliceblue" class="btn btn-info">Detail</a></td>
+
+                    </tr>
+                        @*}*@
+
+                    }
+                </tbody>
+            </table>
+            <a href="/Department/AddDeparment">Add Department</a>
+        </div>
+    </div>
+</div>

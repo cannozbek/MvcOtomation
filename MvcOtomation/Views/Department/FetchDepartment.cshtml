@@ -1,0 +1,26 @@
+﻿@model MvcOtomation.Models.Classes.Department
+@{
+    ViewBag.Title = "Fetch Deparment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 style="margin-left: 20px">Update Department</h2>
+<br />
+
+@using (Html.BeginForm("UpdateDepartment", "Department", FormMethod.Post))
+{
+<div class="form-group" style="margin-left: 20px">
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control", @style = "margin-top: 20px; margin-right: 20px" })
+    <br />
+    @*//Product State*@
+    @Html.LabelFor(x => x.State)
+    @Html.DropDownListFor(x => x.State,
+        (List<SelectListItem>)ViewBag.ListStateBag,
+        new { @class = "form-control" })
+    @Html.HiddenFor(x => x.Id)
+    <button class="btn btn-warning" style="margin-top: 20px">Update</button>
+
+</div>
+
+}

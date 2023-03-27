@@ -21,7 +21,11 @@ namespace MvcOtomation.Models.Classes
         [StringLength(250)]
         public string Photo { get; set; }
 
+        public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
+
+
+        public int SalesTransactionsId { get; set; }
 
         public virtual ICollection<SalesTransaction> SalesTransactions { get; set; }
     }

@@ -12,6 +12,10 @@ namespace MvcOtomation.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Name { get; set; }
+
+        public bool State { get; set; }
+
+        public int EmployeesId { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
     }
 }
