@@ -1,0 +1,51 @@
+﻿@model MvcOtomation.Models.Classes.Current
+@{
+    ViewBag.Title = "AddCurrent";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<br />
+<h2 style="margin-left: 20px">Update Current</h2>
+<br />
+
+@using (Html.BeginForm("UpdateCurrent", "Current", FormMethod.Post))
+{
+<div class="form-group" style="margin-left: 20px">
+    @*//Current Name*@
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    @*//Current Surname*@
+    @Html.LabelFor(x => x.Surname)
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br />
+
+    @*//Current State*@
+    @Html.LabelFor(x => x.City)
+    @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    <br />
+
+    @*//Current Mail*@
+    @Html.LabelFor(x => x.Mail)
+    @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+
+    @*//Product State*@
+    @Html.LabelFor(x => x.State)
+    @Html.DropDownListFor( x=>x.State,
+        (List<SelectListItem>)ViewBag.ListStateBag,
+        new { @class = "form-control" })
+    <br />
+
+
+
+
+    @Html.HiddenFor(x => x.Id)
+    <button class="btn btn-warning" style="margin-top: 20px">Update</button>
+
+</div>
+
+}
+
+

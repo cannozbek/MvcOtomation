@@ -19,12 +19,13 @@ namespace MvcOtomation.Models.Classes
 
         [Column(TypeName = "Varchar")]
         [StringLength(13)]
-        public string State { get; set; }
+        public string City { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(50)]
         public string Mail { get; set; }
 
+        public bool State { get; set; }
         public virtual ICollection<SalesTransaction> SalesTransactions { get; set; }
     }
 }

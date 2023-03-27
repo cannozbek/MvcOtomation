@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*!
 * Start Bootstrap - SB Admin v6.0.0 (https://startbootstrap.com/templates/sb-admin)
 * Copyright 2013-2020 Start Bootstrap
@@ -98,6 +98,11 @@ abbr[data-original-title] {
   border-bottom: 0;
   -webkit-text-decoration-skip-ink: none;
           text-decoration-skip-ink: none;
+}
+div.dataTables_filter {
+    width: 50%;
+    float: right;
+    text-align: right;
 }
 
 address {
