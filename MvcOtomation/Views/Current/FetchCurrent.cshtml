@@ -1,6 +1,6 @@
 ﻿@model MvcOtomation.Models.Classes.Current
 @{
-    ViewBag.Title = "AddCurrent";
+    ViewBag.Title = "FetchCurrent";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -15,27 +15,33 @@
     @*//Current Name*@
     @Html.LabelFor(x => x.Name)
     @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Name, "", new { @style = "color: red" })
     <br />
 
     @*//Current Surname*@
     @Html.LabelFor(x => x.Surname)
     @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Surname, "", new { @style = "color: red" })
+
     <br />
 
     @*//Current State*@
     @Html.LabelFor(x => x.City)
     @Html.TextBoxFor(x => x.City, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.City, "", new { @style = "color: red" })
+
     <br />
 
     @*//Current Mail*@
     @Html.LabelFor(x => x.Mail)
     @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.Mail, "", new { @style = "color: red" })
 
-    @*//Product State*@
-    @Html.LabelFor(x => x.State)
-    @Html.DropDownListFor( x=>x.State,
-        (List<SelectListItem>)ViewBag.ListStateBag,
-        new { @class = "form-control" })
+
+    @*//Current State*@
+    @Html.HiddenFor(x => x.State)
+    
+
     <br />
 
 

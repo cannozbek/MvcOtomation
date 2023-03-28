@@ -8,7 +8,7 @@
 
     <div class="card-header"><i class="fas fa-table mr-1"></i>Current DataTable</div>
     <div class="card-body">
-        <div class="table-responsive">
+        <div >
             <table class="table table-bordered" id="dataTable" >
                 <thead>
                     <tr>
@@ -17,8 +17,10 @@
                         <th>Surname</th>
                         <th>City</th>
                         <th>Mail</th>
-                        @*<th>Delete</th>*@
+                        <th>Delete</th>
                         <th>Update</th>
+                        <th>Sales History</th>
+
                     </tr>
                 </thead>
 
@@ -34,6 +36,7 @@
                         <td>@item.Mail</td>
                         <td style="text-align: center"><a href="/Current/DeleteCurrent/@item.Id" style="color: aliceblue" class=" btn btn-danger">Delete</a></td>
                         <td style="text-align: center"><a href="/Current/FetchCurrent/@item.Id" style="color: aliceblue" class="btn btn-success">Update</a></td>
+                        <td style="text-align: center"><a href="/Current/CurrentSales/@item.Id" style="color: aliceblue" class="btn btn-info">Sales</a></td>
                     </tr>
                     }
                 </tbody>

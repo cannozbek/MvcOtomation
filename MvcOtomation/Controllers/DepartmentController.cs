@@ -83,7 +83,7 @@ namespace MvcOtomation.Controllers
         public ActionResult DeparmentEmployeeSales(int id)
         {
             var sales = context.SalesTransactions.Where(x => x.EmployeeId == id).ToList();
-            var employeeName = context.Employees.Where(x => x.Id == id).Select(y => y.Name + y.Surname).FirstOrDefault();
+            var employeeName = context.Employees.Where(x => x.Id == id).Select(y => y.Name + " " + y.Surname).FirstOrDefault();
             ViewBag.employeeNameBag = employeeName;
 
             return View(sales);

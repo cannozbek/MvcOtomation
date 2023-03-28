@@ -62,6 +62,10 @@ namespace MvcOtomation.Controllers
 
         public ActionResult UpdateCurrent(Current currentInput)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("FetchCurrent");
+            }
             var currentUpdate = context.Currents.Find(currentInput.Id);
             currentUpdate.Name = currentInput.Name;
             currentUpdate.Surname = currentInput.Surname;
@@ -73,6 +77,15 @@ namespace MvcOtomation.Controllers
             context.SaveChanges();
             return RedirectToAction("Index");
 
+        }
+
+
+        public ActionResult CurrentSales(int id)
+        {
+            var currentSales = context.SalesTransactions.Where(x => x.CurrentId == id).ToList();
+            var currentName = context.Currents.Where(x => x.Id == id).Select(y => y.Name + " "+ y.Surname).FirstOrDefault();
+            ViewBag.currentNameBag = currentName;
+            return View(currentSales);
         }
     }
 }

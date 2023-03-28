@@ -1,11 +1,11 @@
 ﻿@using MvcOtomation.Models.Classes
 @model List<SalesTransaction>
 @{
-    ViewBag.Title = "DeparmentEmployeeSales";
+    ViewBag.Title = "CurrentSales";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<h2 style="margin-left: 20px">@ViewBag.employeeNameBag's Sales</h2>
+<h2 style="margin-left: 20px">@ViewBag.currentNameBag's Sales</h2>
 <br />
 <div class="card mb-4">
     <div class="card-header"><i class="fas fa-table mr-1"></i>Sales</div>
@@ -28,17 +28,17 @@
                     @foreach (var item in Model)
                     {
                         
-                    <tr>
-                        <td>@item.Id</td>
-                        <td>@item.Product.Name</td>
-                        <td>@item.Current.Name  @item.Current.Surname</td>
-                        <td>@item.UnitPrice</td>
-                        <td>@item.Piece</td>
-                        <td>@item.Amount</td>
-                        <td>@item.Time</td>
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Product.Name</td>
+                            <td>@item.Current.Name  @item.Current.Surname</td>
+                            <td>@item.UnitPrice</td>
+                            <td>@item.Piece</td>
+                            <td>@item.Amount</td>
+                            <td>@item.Time</td>
 
-                    </tr>
-                       
+                        </tr>
+                        
 
                     }
                 </tbody>

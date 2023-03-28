@@ -1,0 +1,35 @@
+﻿@model MvcOtomation.Models.Classes.Employee
+
+@{
+    ViewBag.Title = "Add Employee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="margin-left: 20px">Add Employee</h2>
+<br />
+<form method="post" class="form-group" style="margin-left: 20px">
+    @*//Product Name*@
+    @Html.LabelFor(x => x.Name)
+    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+    <br />
+
+    @*//Product Surname*@
+    @Html.LabelFor(x => x.Surname)
+    @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+    <br />
+
+    @*//Product Photo*@
+    @Html.LabelFor(x => x.Photo)
+    @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+    <br />
+
+    @*//Employee Deparment*@
+    @Html.Label("Department Name")
+    @Html.DropDownListFor( x=>x.DepartmentId,
+    (List<SelectListItem>)ViewBag.ListDepartmentBag,
+    new { @class = "form-control" })
+
+    <button class="btn btn-info" style="margin-top: 20px">Add</button>
+</form>
+

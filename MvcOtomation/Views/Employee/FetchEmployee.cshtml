@@ -1,0 +1,42 @@
+﻿@model MvcOtomation.Models.Classes.Employee
+
+@{
+    ViewBag.Title = "Fetch Employee";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="margin-left: 20px">Update Employee</h2>
+<br />
+
+@using (Html.BeginForm("UpdateEmployee", "Employee", FormMethod.Post))
+
+{
+    <div style="margin-left: 20px">
+        @*//Product Name*@
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+        <br />
+
+        @*//Product Surname*@
+        @Html.LabelFor(x => x.Surname)
+        @Html.TextBoxFor(x => x.Surname, new { @class = "form-control" })
+        <br />
+
+        @*//Product Photo*@
+        @Html.LabelFor(x => x.Photo)
+        @Html.TextBoxFor(x => x.Photo, new { @class = "form-control" })
+        <br />
+
+        @*//Employee Deparment*@
+        @Html.Label("Department Name")
+        @Html.DropDownListFor(x => x.DepartmentId,
+         (List<SelectListItem>)ViewBag.ListDepartmentBag,
+         new { @class = "form-control" })
+
+        @Html.HiddenFor(x => x.Id);
+
+        <button class="btn btn-info" style="margin-top: 20px">Update</button>
+    </div>
+
+}

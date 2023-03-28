@@ -1,0 +1,50 @@
+﻿@using MvcOtomation.Models.Classes
+@model List<Employee>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card-header"><i class="fas fa-table mr-1"></i>Employee DataTable</div>
+<div class="card-body">
+    <div>
+        <table class="table table-bordered" id="dataTable">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Photo</th>
+                    <th>Departman</th>
+                    <th>Sales</th>
+                    @*<th>Delete</th>*@
+                    <th>Update</th>
+
+
+                </tr>
+            </thead>
+
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Photo</td>
+                    <td>@item.Department.Name</td>
+
+                    <td style="text-align: center"><a href="/Department/DeparmentEmployeeSales/@item.Id" style="color: aliceblue" class="btn btn-info">Sales</a></td>
+
+                    @*<td style="text-align: center"><a href="/Current/DeleteCurrent/@item.Id" style="color: aliceblue" class=" btn btn-danger">Delete</a></td>*@
+                    <td style="text-align: center"><a href="/Employee/FetchEmployee/@item.Id" style="color: aliceblue" class="btn btn-success">Update</a></td>
+
+                </tr>
+                }
+            </tbody>
+        </table>
+        <a href="/Employee/AddEmployee">Add Employee</a>
+    </div>
+</div>
+

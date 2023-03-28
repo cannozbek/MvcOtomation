@@ -12,6 +12,8 @@ namespace MvcOtomation.Models.Classes
         public DbSet<Category> Categories { get; set; }
         public DbSet<Current> Currents { get; set; }
         public DbSet<Department> Departments { get; set; }
+
+
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Expense> Expenses { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
