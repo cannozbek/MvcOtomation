@@ -1,0 +1,58 @@
+﻿@model MvcOtomation.Models.Classes.SalesTransaction
+
+@{
+    ViewBag.Title = "FetchSale";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="margin-left: 20px">Update Sales </h2>
+<br />
+@using (Html.BeginForm("UpdateSale", "Sales", FormMethod.Post))
+{ 
+<div style="margin-left: 20px">
+    @*//Sales Employee*@
+    @Html.Label("Employee Name")
+    @Html.DropDownListFor( x=>x.EmployeeId,
+    (List<SelectListItem>)ViewBag.ListEmployeeBag,
+    new { @class = "form-control" })
+
+
+    <br />
+
+    @*//Sales Product*@
+    @Html.Label("Product")
+    @Html.DropDownListFor( x=>x.ProductId,
+    (List<SelectListItem>)ViewBag.ListProductBag,
+    new { @class = "form-control" })
+    <br />
+
+    @*//Sales Current*@
+    @Html.Label("Current")
+    @Html.DropDownListFor( x=>x.CurrentId,
+    (List<SelectListItem>)ViewBag.ListCurrentBag,
+    new { @class = "form-control" })
+    <br />
+
+    @*//Sales Price*@
+    @Html.Label("Price")
+    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control" })
+    <br />
+
+    @*//Sales Piece*@
+    @Html.LabelFor(x => x.Piece)
+    @Html.TextBoxFor(x => x.Piece, new { @class = "form-control" })
+    <br />
+
+    @*//Sales Piece*@
+    @Html.LabelFor(x => x.Amount)
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+    <br />
+    @Html.HiddenFor(x => x.Id)
+
+    @Html.HiddenFor(x => x.Time)
+
+
+    <button class="btn btn-info" style="margin-top: 20px">Update Sale</button>
+</div>
+}
