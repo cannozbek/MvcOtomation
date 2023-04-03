@@ -10,9 +10,9 @@ namespace MvcOtomation.Models.Classes
         [Key]
         public int Id { get; set; }
 
-        [Column(TypeName = "Char")]
+        [Column(TypeName = "Varchar")]
         [StringLength(1)]
-        public char SerialNo { get; set; }
+        public string SerialNo { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(6)]
@@ -23,8 +23,10 @@ namespace MvcOtomation.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string TaxAdminstration { get; set; }
-
-        public DateTime Time { get; set; }
+        
+        [Column(TypeName = "Char")]
+        [StringLength(5)]
+        public string Time { get; set; }
 
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
@@ -33,7 +35,11 @@ namespace MvcOtomation.Models.Classes
         [Column(TypeName = "Varchar")]
         [StringLength(30)]
         public string Receiver { get; set; }
-        
+
+        public decimal Amount { get; set; }
+
+        public int InvoiceDetailsId { get; set; }
+
         public virtual ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

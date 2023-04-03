@@ -1,0 +1,52 @@
+﻿@using MvcOtomation.Models.Classes
+@model List<Invoice>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="card mb-4">
+    <div class="card-header"><i class="fas fa-table mr-1"></i>Invoice DataTable</div>
+    <div class="card-body">
+        <div>
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>No</th>
+                        <th>Date</th>
+                        <th>Tax Adminstration</th>
+                        <th>Time</th>
+                        <th>Submitter</th>
+                        <th>Receiver</th>
+                        <th>Amount</th>
+                        <th>Update</th>
+                        <th>Detail</th>
+
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>@item.Id</td>
+                        <td>@item.SerialNo @item.OrderNo</td>
+                        <td>@item.Date.ToString("dd/MM/yy")</td>
+                        <td>@item.TaxAdminstration</td>
+                        <td>@item.Time</td>
+                        <td>@item.Submitter</td>
+                        <td>@item.Receiver</td>
+                        <td>@item.Amount</td>
+
+                        <td style="text-align: center"><a href="/Invoice/FetchInvoice/@item.Id" style="color: aliceblue" class="btn btn-success">Update</a></td>
+                        <td style="text-align: center"><a href="/Department/DetailsDepartment/@item.Id" style="color: aliceblue" class="btn btn-info">Print</a></td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+            <a href="/Invoice/AddInvoice">Add Invoice</a>
+        </div>
+    </div>
+</div>

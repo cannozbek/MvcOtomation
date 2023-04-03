@@ -1,0 +1,59 @@
+﻿@model MvcOtomation.Models.Classes.Invoice
+@using MvcOtomation.Helpers
+@{
+    ViewBag.Title = "AddInvoice";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 style="margin-left: 20px">Add Invoice</h2>
+<br />
+<form method="post" class="form-group" style="margin-left: 20px">
+
+    @Html.LabelFor(x => x.SerialNo)
+    @Html.TextBoxFor(x => x.SerialNo, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.OrderNo)
+    @Html.TextBoxFor(x => x.OrderNo, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.Date)
+    <br />
+    @Html.DatePickerFor(x => x.Date, new { @class = "form-control", @style = "width: %100", @required = "required" })
+    <br />
+    <br />
+
+    @Html.LabelFor(x => x.TaxAdminstration)
+    @Html.TextBoxFor(x => x.TaxAdminstration, new { @class = "form-control" })
+    <br />
+
+    @Html.LabelFor(x => x.Time)
+    @Html.TextBoxFor(x => x.Time, new { @class = "form-control" })
+    <br />
+
+    @Html.Label("Submitter")
+    @Html.DropDownListFor( x=>x.Submitter,
+    (List<SelectListItem>)ViewBag.ListEmployeeBag,
+    new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Receiver")
+    @Html.DropDownListFor( x=>x.Receiver,
+    (List<SelectListItem>)ViewBag.ListCurrentBag,
+    new { @class = "form-control" })
+    <br />
+
+
+    @Html.Label("Amount")
+    @Html.TextBoxFor(x => x.Amount, new { @class = "form-control" })
+
+    <br />
+    @Html.HiddenFor(x => x.Id)
+    @Html.HiddenFor(x => x.InvoiceDetailsId)
+
+
+    <button class="btn btn-info" style="margin-top: 20px">Add</button>
+</form>
+
